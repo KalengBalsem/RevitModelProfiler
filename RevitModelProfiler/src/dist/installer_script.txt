@@ -1,0 +1,21 @@
+; -- Inno Setup Script for Revit Model Profiler --
+
+[Setup]
+AppName=Revit Model Profiler
+AppVersion=1.0
+DefaultDirName={userappdata}\Autodesk\Revit\Addins\2025
+DefaultGroupName=Revit Model Profiler
+UninstallDisplayIcon={app}\RevitModelProfiler.dll
+OutputBaseFilename=RevitModelProfiler_Setup_v1.0
+Compression=lzma2
+SolidCompression=yes
+
+[Files]
+; This tells the installer to take your compiled DLL and the addin manifest
+; and install them into the user's Revit Addins folder.
+Source: "C:\Users\balse\Documents\VScode\Revit_Model_Profiler\RevitModelProfiler\RevitModelProfiler\bin\Release\net8.0-windows\RevitModelProfiler.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\balse\Documents\VScode\Revit_Model_Profiler\RevitModelProfiler\RevitModelProfiler\src\dist\RevitModelProfiler.addin"; DestDir: "{app}"; Flags: ignoreversion
+
+[Icons]
+Name: "{group}\Revit Model Profiler Help"; Filename: "https://www.google.com/search?q=https://github.com/your-username/your-repo"
+Name: "{group}\Uninstall Revit Model Profiler"; Filename: "{uninstallexe}"

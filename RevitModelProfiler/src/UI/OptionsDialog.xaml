@@ -1,0 +1,41 @@
+<Window x:Class="RevitModelProfiler.src.UI.OptionsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Revit Model Profiler" Height="600" Width="700"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+            <Button x:Name="RefreshButton" Content="Analyze Model" Padding="10,5"
+                    Click="RefreshButton_Click"/>
+            <Button x:Name="SelectButton" Content="Select in Model" Padding="10,5" Margin="5,0,0,0"
+                    Click="SelectButton_Click" IsEnabled="False"/>
+            <TextBlock Text="Search:" VerticalAlignment="Center" Margin="20,0,5,0"/>
+            <TextBox x:Name="SearchTextBox" Width="200" VerticalAlignment="Center"
+                     TextChanged="SearchTextBox_TextChanged"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" x:Name="ResultsGrid" AutoGenerateColumns="False"
+                  IsReadOnly="True" CanUserSortColumns="True"
+                  SelectionChanged="ResultsGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Family Name" Binding="{Binding FamilyName}" Width="*"/>
+                <DataGridTextColumn Header="Count" Binding="{Binding InstanceCount}" Width="Auto"/>
+                <DataGridTextColumn Header="Faces" Binding="{Binding FaceCount}" Width="Auto"/>
+                <DataGridTextColumn Header="Triangles" Binding="{Binding MeshTriangleCount}" Width="Auto"/>
+                <!-- File Size (MB) column removed -->
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StatusBar Grid.Row="2" Margin="0,5,0,0">
+            <StatusBarItem>
+                <TextBlock x:Name="StatusTextBlock" Text="Ready."/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>
