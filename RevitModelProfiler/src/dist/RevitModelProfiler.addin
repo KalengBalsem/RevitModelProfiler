@@ -2,10 +2,10 @@
 <RevitAddIns>
   <AddIn Type="Application">
     <Name>RevitModelProfiler</Name>
-    <Assembly>C:\Users\balse\Documents\VScode\Revit_Model_Profiler\RevitModelProfiler\RevitModelProfiler\bin\Release\net8.0-windows\RevitModelProfiler.dll</Assembly>
+    <Assembly>RevitModelProfiler\RevitModelProfiler.dll</Assembly>
     <AddInId>5a4a56f0-b16f-4d6a-9b41-235c7f4e9c32</AddInId>
     <FullClassName>RevitModelProfiler.src.App</FullClassName>
-    <VendorId>sigmarizzlord</VendorId>
-    <VendorDescription>Institut Teknologi Bandung</VendorDescription>
+    <VendorId>kalengbalsem</VendorId>
+    <VendorDescription>archiv</VendorDescription>
   </AddIn>
 </RevitAddIns>
